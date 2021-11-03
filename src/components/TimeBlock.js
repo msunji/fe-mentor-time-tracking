@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { BsThreeDots } from 'react-icons/bs';
 import Work from '../assets/img/icon-work.svg';
 import Play from '../assets/img/icon-play.svg';
