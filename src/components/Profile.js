@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 import profileImg from '../assets/img/image-jeremy.png';
 
+const ProfileContainer = styled.div`
+  background: var(--blue-dark);
+  border-radius: var(--curved-border);
+`;
+
 const ProfileInfo = styled.div`
   background: var(--blue);
   display: flex;
@@ -22,21 +27,39 @@ const ProfileInfo = styled.div`
 `;
 
 const ProfileFilter = styled.div`
+  padding: 2rem 2rem;
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-between;
+
+  p {
+    color: var(--blue-desat);
+
+    &:hover {
+      cursor: pointer;
+      color: var(--white);
+    }
+  }
 `;
 
 const Profile = (data) => {
 
   return (
-    <div>
+    <ProfileContainer>
       <ProfileInfo>
         <img src={profileImg} alt="Jeremy Robson" />
         <div>
           <p>Report for</p>
           <h1>Jeremy Robson</h1>
         </div>
-      </ProfileInfo>
 
-    </div>
+      </ProfileInfo>
+      <ProfileFilter>
+        <p>Daily</p>
+        <p>Weekly</p>
+        <p>Monthly</p>
+      </ProfileFilter>
+    </ProfileContainer>
   );
 }
 
