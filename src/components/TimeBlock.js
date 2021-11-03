@@ -7,11 +7,14 @@ const Block = styled.div`
 `;
 
 const InnerBlock = styled.div`
-  display: flex;
-  justify-content: space-between;
   padding: 2rem 2rem;
   background: var(--blue-dark);
   border-radius: var(--curved-border);
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+  }
 `;
 
 const TimeBlock = ({data}) => {
@@ -19,12 +22,13 @@ const TimeBlock = ({data}) => {
   return (
     <Block>
       <InnerBlock>
-        <div>
+        <div className="row row--top">
           <h2>{data.title}</h2>
-          <p>{data.timeframes.weekly.current}hrs</p>
-        </div>
-        <div>
           <BsThreeDots />
+        </div>
+        <div className="row row--bottom">
+          
+          <p>{data.timeframes.weekly.current}hrs</p>
           <small>Last Week - {data.timeframes.weekly.previous}hrs</small>
         </div>
       </InnerBlock>
