@@ -15,6 +15,8 @@ const GlobalStyle = createGlobalStyle`
     --green: hsl(145, 58%, 55%);
     --orange: hsl(43, 84%, 65%);
     --violet: hsl(264, 64%, 52%);
+    --white: #fff;
+    --curved-border: 15px;
   }
   *,
   *:before,
@@ -29,6 +31,19 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Rubik', sans-serif;
     font-size: 18px;
+    color: var(--white);
+    background: var(--blue-darker);
+    font-weight: 300;
+  }
+  h1 {
+    font-size: 1.3em;
+    line-height: 1.167;
+  }
+  h2 {
+    font-weight: 500;
+  }
+  p {
+    line-height: 1;
   }
 `;
 
