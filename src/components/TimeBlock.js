@@ -1,6 +1,24 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { BsThreeDots } from 'react-icons/bs';
 import Work from '../assets/img/icon-work.svg';
+import Play from '../assets/img/icon-play.svg';
+import Study from '../assets/img/icon-study.svg';
+import Exercise from '../assets/img/icon-exercise.svg';
+import Social from '../assets/img/icon-social.svg';
+import SelfCare from '../assets/img/icon-self-care.svg';
+
+const setCategoryStyle = (category) => {
+  const categories = {
+    'Work': `background-color: var(--orange); background-image: url(${Work});`,
+    'Play': `background-color: var(--blue-soft); background-image: url(${Play});`,
+    'Study': `background-color: var(--pink); background-image: url(${Study});`,
+    'Exercise': `background-color: var(--green); background-image: url(${Exercise});`,
+    'Social': `background-color: var(--violet); background-image: url(${Social});`,
+    'Self Care': `background-color: var(--yellow); background-image: url(${SelfCare});`,
+    'default': `background-color: var(--blue);`,
+  }
+  return (categories[category] || categories['default']);
+}
 
 const Block = styled.div`
   margin-bottom: 2rem;
@@ -8,8 +26,7 @@ const Block = styled.div`
   .block-top {
     height: 55px;
     border-radius: var(--curved-border) var(--curved-border) 0 0;
-    background-color: var(--orange);
-    background-image: url(${Work});
+    ${({ category }) => setCategoryStyle(category)};
     background-position: 93% -10px;
     background-repeat: no-repeat;
   }
@@ -50,7 +67,7 @@ const InnerBlock = styled.div`
 `;
 
 const TimeBlock = ({data}) => {
-  console.log(data);
+  // console.log(data.title);
   return (
     <Block category={data.title}>
       <div className="block-top" />
