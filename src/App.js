@@ -1,20 +1,30 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import GlobalStyle from './style/globalStyle';
-import breakpoints from './style/breakpoints';
-import styled from 'styled-components';
-import data from './data/data';
 import Container from './components/Container';
 import Profile from './components/Profile';
 import TimeBlock from './components/TimeBlock';
 
+
 function App() {
-  // console.log(data);
+  const [time, setTime] = useState('weekly');
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch('./data.json')
+      .then(res => res.json())
+      .then(data => setData(data))
+  }, [time]);
+
+  const handleSetTime = (e) => {
+    setTime(e.target.id);
+  }
+
   return (
     <>
       <GlobalStyle />
         <Container>
-          <Profile />
-            { data.map(category => <TimeBlock key={category.title} data={category} />)}
+          <Profile handleTime={handleSetTime} time={time} />
+            { data.map(category => <TimeBlock key={category.title} category={category.title} data={category.timeframes[time]} />)}
         </Container>
     </>
   );

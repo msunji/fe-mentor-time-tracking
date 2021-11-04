@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import breakpoints from '../style/breakpoints';
 import { BsThreeDots } from 'react-icons/bs';
 import Work from '../assets/img/icon-work.svg';
 import Play from '../assets/img/icon-play.svg';
@@ -20,24 +21,41 @@ const setCategoryStyle = (category) => {
   return (categories[category] || categories['default']);
 }
 
-const Block = styled.div`
-  margin-bottom: 2rem;
+const OuterBlock = styled.div`
+`;
 
-  .block-top {
+const Block = styled.div`
+  position: relative;
+  height: 100%;
+  margin-top: 40px;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
     height: 55px;
+    top: -40px;
+    left: 0;
     border-radius: var(--curved-border) var(--curved-border) 0 0;
     ${({ category }) => setCategoryStyle(category)};
     background-position: 93% -10px;
     background-repeat: no-repeat;
+    z-index: -1;
   }
+
 `;
 
-const InnerBlock = styled.div`
-  transform: translateY(-12px);
+const BlockData = styled.div`
   width: 100%;
-  padding: 2rem 2rem;
+  height: calc(100% - 40px);
+  padding: 1.8rem 1.8rem;
   background: var(--blue-dark);
   border-radius: var(--curved-border);
+  transition: background 0.4s ease-in;
+
+  &:hover {
+    background: var(--blue-desat-hover);
+  }
 
   .row {
     display: flex;
@@ -56,6 +74,7 @@ const InnerBlock = styled.div`
     &--bottom {
       p {
         font-size: 1.78em;
+        font-weight: 300;
       }
       small {
         color: var(--blue-pale);
@@ -64,24 +83,44 @@ const InnerBlock = styled.div`
       }
     }
   }
+
+  @media screen and ${breakpoints.l} {
+    .row--bottom {
+      flex-direction: column;
+      align-items: flex-start;
+
+      p {
+        margin-bottom: 1.2rem;
+      }
+    }
+  }
+
+  @media screen and ${breakpoints.xl} {
+    .row--bottom {
+      p {
+        font-size: 2.8em;
+      }
+    }
+  }
 `;
 
-const TimeBlock = ({data}) => {
-  // console.log(data.title);
+const TimeBlock = ({ data: {current, previous}, category}) => {
   return (
-    <Block category={data.title}>
-      <div className="block-top" />
-      <InnerBlock>
-        <div className="row row--top">
-          <h2>{data.title}</h2>
-          <BsThreeDots />
-        </div>
-        <div className="row row--bottom">
-          <p>{data.timeframes.weekly.current}hrs</p>
-          <small>Last Week - {data.timeframes.weekly.previous}hrs</small>
-        </div>
-      </InnerBlock>
-    </Block>
+    <OuterBlock>
+      <Block category={category}>
+        <BlockData>
+          <div className="row row--top">
+            <h2>{category}</h2>
+            <BsThreeDots />
+          </div>
+          <div className="row row--bottom">
+            <p>{current}hrs</p>
+            <small>Last Week - {previous}hrs</small>
+          </div>
+        </BlockData>
+      </Block>
+    </OuterBlock>
+
   )
 };
 
