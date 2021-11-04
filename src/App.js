@@ -24,7 +24,7 @@ function App() {
       <GlobalStyle />
         <Container>
           <Profile handleTime={handleSetTime} time={time} />
-            { data.map(category => <TimeBlock key={category.title} category={category.title} data={category.timeframes[time]} />)}
+            { data.map(category => <TimeBlock key={category.title} category={category.title} data={category.timeframes[time]} timeframe={time} />)}
         </Container>
     </>
   );
