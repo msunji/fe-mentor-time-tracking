@@ -1,27 +1,21 @@
+import { useState } from 'react';
 import GlobalStyle from './style/globalStyle';
+import breakpoints from './style/breakpoints';
 import styled from 'styled-components';
 import data from './data/data';
 import Container from './components/Container';
 import Profile from './components/Profile';
-
-const Main = styled.main`
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
+import TimeBlock from './components/TimeBlock';
 
 function App() {
-  console.log(data);
+  // console.log(data);
   return (
     <>
       <GlobalStyle />
-      <Main>
         <Container>
-          <Profile data={data} />
+          <Profile />
+            { data.map(category => <TimeBlock key={category.title} data={category} />)}
         </Container>
-      </Main>
     </>
   );
 }
