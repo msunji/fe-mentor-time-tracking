@@ -24,6 +24,7 @@ const ProfileInfo = styled.div`
     height: 70px;
     border-radius: 50%;
     margin-right: 20px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
   
   p {
