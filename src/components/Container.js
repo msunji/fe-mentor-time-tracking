@@ -8,7 +8,7 @@ const Container = styled.div`
   margin-left: auto;
   margin-right: auto;
   display: grid;
-  gap: 1rem;
+  gap: 1.8rem;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   grid-template-areas: "profile"
