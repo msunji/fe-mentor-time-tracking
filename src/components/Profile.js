@@ -1,9 +1,12 @@
 import styled from 'styled-components';
+import breakpoints from '../style/breakpoints';
 import profileImg from '../assets/img/image-jeremy.png';
 
 const ProfileContainer = styled.div`
   background: var(--blue-dark);
   border-radius: var(--curved-border);
+  grid-area: profile;
+  height: 100%;
 `;
 
 const ProfileInfo = styled.div`
@@ -42,7 +45,7 @@ const ProfileFilter = styled.div`
   }
 `;
 
-const Profile = (data) => {
+const Profile = () => {
 
   return (
     <ProfileContainer>
