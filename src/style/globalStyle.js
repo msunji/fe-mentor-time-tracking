@@ -9,6 +9,7 @@ const GlobalStyle = createGlobalStyle`
     --blue-soft: hsl(195, 74%, 62%);
     --blue-pale: hsl(236, 100%, 87%);
     --blue-desat: hsl(235, 45%, 61%);
+    --blue-desat-hover: hsla(236, 41%, 34%, 1);
     --blue-dark: hsl(235, 46%, 20%);
     --blue-darker: hsl(226, 43%, 10%);
     --orange: hsl(15, 100%, 70%);
@@ -19,6 +20,10 @@ const GlobalStyle = createGlobalStyle`
     --white: #fff;
     --curved-border: 15px;
   }
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
   *,
   *:before,
   *:after {
@@ -28,6 +33,7 @@ const GlobalStyle = createGlobalStyle`
     height: 100vh;
     width: 100%;
     overflow-x: hidden;
+    text-rendering: optimizeLegibility;
   }
   body {
     font-family: 'Rubik', sans-serif;
