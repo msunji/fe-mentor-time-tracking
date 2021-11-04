@@ -104,7 +104,20 @@ const BlockData = styled.div`
   }
 `;
 
-const TimeBlock = ({ data: {current, previous}, category}) => {
+const TimeBlock = ({ data: {current, previous}, category, timeframe}) => {
+
+  const setPreviousTime = (timeframe) => {
+    if (timeframe === 'daily') {
+      return 'Yesterday';
+    }
+    if (timeframe === 'weekly') {
+      return 'Last Week';
+    }
+    if (timeframe === 'monthly') {
+      return 'Last Month';
+    }
+  }
+
   return (
     <OuterBlock>
       <Block category={category}>
@@ -115,7 +128,7 @@ const TimeBlock = ({ data: {current, previous}, category}) => {
           </div>
           <div className="row row--bottom">
             <p>{current}hrs</p>
-            <small>Last Week - {previous}hrs</small>
+            <small>{setPreviousTime(timeframe)}- {previous}hrs</small>
           </div>
         </BlockData>
       </Block>
