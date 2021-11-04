@@ -1,6 +1,6 @@
 const breakpoints = {
-  l: '(min-width: 650px)',
-  xl: '(min-width: 840px)'
+  l: '(min-width: 700px)',
+  xl: '(min-width: 850px)'
 }
 
 export default breakpoints;
