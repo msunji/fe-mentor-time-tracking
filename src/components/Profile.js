@@ -7,6 +7,8 @@ const ProfileContainer = styled.div`
   border-radius: var(--curved-border);
   grid-area: profile;
   height: 100%;
+  display: flex;
+  flex-direction: column;
 `;
 
 const ProfileInfo = styled.div`
@@ -27,6 +29,11 @@ const ProfileInfo = styled.div`
   p {
     color: var(--blue-pale);
   }
+
+  @media screen and ${breakpoints.l} {
+    flex-direction: column;
+    flex: 2 1 0;
+  }
 `;
 
 const ProfileFilter = styled.div`
@@ -42,6 +49,10 @@ const ProfileFilter = styled.div`
       cursor: pointer;
       color: var(--white);
     }
+  }
+  @media screen and ${breakpoints.l} {
+    flex-direction: column;
+    flex: 1 1 0;
   }
 `;
 
