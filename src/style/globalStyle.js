@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import breakpoints from './breakpoints';
 import reset from 'styled-reset';
 
 const GlobalStyle = createGlobalStyle`
@@ -51,6 +52,14 @@ const GlobalStyle = createGlobalStyle`
   }
   p {
     line-height: 1;
+  }
+
+  @media screen and ${breakpoints.l} {
+    #root {
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
   }
 `;
 
