@@ -20,13 +20,21 @@ const ProfileInfo = styled.div`
   padding: 1.8rem 1.8rem;
   border-radius: var(--curved-border);
 
-  img {
-    border: 3px solid var(--white);
-    height: 70px;
-    border-radius: 50%;
+  .profile-img-wrapper {
     margin-right: 1rem;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    height: 70px;
+    width: 70px;
+
+    img {
+      height: inherit;
+      width: inherit;
+      border-radius: 50%;
+      border: 3px solid var(--white);
+      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    }
   }
+
+
   
   p {
     color: var(--blue-pale);
@@ -38,7 +46,7 @@ const ProfileInfo = styled.div`
     align-items: flex-start;
     justify-content: flex-end;
 
-    img {
+    .profile-img-wrapper {
       margin-bottom: 2rem;
     }
 
@@ -88,7 +96,10 @@ const Profile = ({ handleTime, time }) => {
   return (
     <ProfileContainer>
       <ProfileInfo>
-        <img src={profileImg} alt="Jeremy Robson" />
+        <div className="profile-img-wrapper">
+          <img src={profileImg} alt="Jeremy Robson" />
+        </div>
+        
         <div>
           <p>Report for</p>
           <h1>Jeremy Robson</h1>
