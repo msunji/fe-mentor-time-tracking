@@ -13,7 +13,7 @@ function App() {
     fetch('./data.json')
       .then(res => res.json())
       .then(data => setData(data))
-  }, [time]);
+  }, []);
 
   const handleSetTime = (e) => {
     setTime(e.target.id);
@@ -24,7 +24,7 @@ function App() {
       <GlobalStyle />
         <Container>
           <Profile handleTime={handleSetTime} time={time} />
-            { data.map(category => <TimeBlock key={category.title} category={category.title} data={category.timeframes[time]} timeframe={time} />)}
+            { data.map(category => <TimeBlock key={category.timeframes[time]} category={category.title} data={category.timeframes[time]} timeframe={time} />)}
         </Container>
     </>
   );
