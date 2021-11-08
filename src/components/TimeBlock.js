@@ -127,8 +127,8 @@ const TimeBlock = ({ data: {current, previous}, category, timeframe}) => {
             <BsThreeDots />
           </div>
           <div className="row row--bottom">
-            <p>{current}hrs</p>
-            <small>{setPreviousTime(timeframe)}- {previous}hrs</small>
+            <p><span>{current}</span>hrs</p>
+            <small>{setPreviousTime(timeframe)} - <span>{previous}</span>hrs</small>
           </div>
         </BlockData>
       </Block>
