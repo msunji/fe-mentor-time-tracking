@@ -4,7 +4,7 @@
 </p>
 <br />
 <p align="center">
-  <a href="https://www.frontendmentor.io/challenges/time-tracking-dashboard-UIQ7167Jw/">View Challenge</a> | <a href="https://fe-mentor-time-tracking.vercel.app//">View Live Site</a>
+  <a href="https://www.frontendmentor.io/challenges/time-tracking-dashboard-UIQ7167Jw/">View Challenge</a> | <a href="https://fe-mentor-time-tracking.vercel.app/">View Live Site</a>
 </div>
 
 <br />
