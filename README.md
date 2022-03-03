@@ -15,3 +15,11 @@ Users need to be able to:
 - Switch between viewing Daily, Weekly, and Monthly stats
 
 ---
+
+## Overview/Notes
+
+For this challenge, you're given the option to pull data from a JSON file, which is what I opted for. The JSON file is hosted locally, so there's really not need to make any external API calls or anything for this, but I suppose if I ever needed practice, I could move the data to an external database and refactor my code accordingly. As for styling the project, I went with Styled Components as per usual. It could be nice to zhush it up a bit more and add simple transitions when toggling between weekly, monthly, and daily data.
+
+## Tech Stack
+- React, bootstrapped with CRA
+- Styled Components
