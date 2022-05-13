@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import breakpoints from '../style/breakpoints';
 
-const Container = styled.div`
+const Container = styled.main`
   padding: 4rem 0;
   width: 90%;
   max-width: 1100px;
@@ -11,27 +11,30 @@ const Container = styled.div`
   gap: 1.8rem;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
-  grid-template-areas: "profile"
-                        "."
-                        "."
-                        "."
-                        "."
-                        "."
-                        ".";
+  grid-template-areas:
+    'profile'
+    '.'
+    '.'
+    '.'
+    '.'
+    '.'
+    '.';
 
   @media screen and ${breakpoints.l} {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    grid-template-areas: "profile . . "
-                          "profile . . "
-                          "profile . . ";
+    grid-template-areas:
+      'profile . . '
+      'profile . . '
+      'profile . . ';
   }
 
   @media screen and ${breakpoints.xl} {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    grid-template-areas: "profile . . ."
-                         "profile . . .";
+    grid-template-areas:
+      'profile . . .'
+      'profile . . .';
   }
 `;
 

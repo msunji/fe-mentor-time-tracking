@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import breakpoints from '../style/breakpoints';
 import profileImg from '../assets/img/image-jeremy.png';
 
-const ProfileContainer = styled.div`
+const ProfileContainer = styled.section`
   background: var(--blue-dark);
   border-radius: var(--curved-border);
   grid-area: profile;
@@ -34,8 +34,6 @@ const ProfileInfo = styled.div`
     }
   }
 
-
-  
   p {
     color: var(--blue-pale);
   }
@@ -84,7 +82,7 @@ const ProfileFilter = styled.div`
   @media screen and ${breakpoints.l} {
     flex-direction: column;
     flex: 1 1 0;
-    
+
     p {
       padding: 0.5rem 0;
     }
@@ -92,27 +90,43 @@ const ProfileFilter = styled.div`
 `;
 
 const Profile = ({ handleTime, time }) => {
-
   return (
     <ProfileContainer>
       <ProfileInfo>
         <div className="profile-img-wrapper">
           <img src={profileImg} alt="Jeremy Robson" />
         </div>
-        
+
         <div>
           <p>Report for</p>
           <h1>Jeremy Robson</h1>
         </div>
-
       </ProfileInfo>
       <ProfileFilter>
-        <p id="daily" onClick={handleTime} className={`${time === 'daily' ? 'active' : ''}`}>Daily</p>
-        <p id="weekly" onClick={handleTime} className={`${time === 'weekly' ? 'active' : ''}`}>Weekly</p>
-        <p id="monthly" onClick={handleTime} className={`${time === 'monthly' ? 'active' : ''}`}>Monthly</p>
+        <p
+          id="daily"
+          onClick={handleTime}
+          className={`${time === 'daily' ? 'active' : ''}`}
+        >
+          Daily
+        </p>
+        <p
+          id="weekly"
+          onClick={handleTime}
+          className={`${time === 'weekly' ? 'active' : ''}`}
+        >
+          Weekly
+        </p>
+        <p
+          id="monthly"
+          onClick={handleTime}
+          className={`${time === 'monthly' ? 'active' : ''}`}
+        >
+          Monthly
+        </p>
       </ProfileFilter>
     </ProfileContainer>
   );
-}
+};
 
 export default Profile;
